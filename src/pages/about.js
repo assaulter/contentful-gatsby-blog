@@ -14,11 +14,15 @@ class AboutIndex extends React.Component {
       <div style={{ background: '#fff' }}>
         <Helmet title={siteTitle} />
         <div className="wrapper">
-          <h2 className="section-headline">About</h2>          
+          <h2 className="section-headline">About</h2>
           <ul>
-            <li>name: {author.node.name}</li>
-            <li>shortBio: {author.node.shortBio.shortBio}</li>
+            <li>twitter: {author.node.twitter}</li>
           </ul>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: author.node.shortBio.childMarkdownRemark.html,
+            }}
+          />
         </div>
       </div>
     )
@@ -38,8 +42,11 @@ export const pageQuery = graphql`
       edges {
         node {
           name
+          twitter
           shortBio {
-            shortBio
+            childMarkdownRemark {
+              html
+            }
           }
         }
       }
