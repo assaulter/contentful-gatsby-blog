@@ -41,4 +41,7 @@ module.exports = {
       },
     },
   ],
+  siteMetadata: {
+    title: 'kz_kazuki',
+  }
 }
