@@ -11,6 +11,11 @@ contentfulConfig = {
   accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN || contentfulConfig.accessToken,
 }
 
+// Google Analytics Config
+GAConfig = {
+  trackingId: process.env.TRACKING_ID || ""
+}
+
 const { spaceId, accessToken } = contentfulConfig
 
 if (!spaceId || !accessToken) {
@@ -32,7 +37,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: 'UA-131790992-2',
+        trackingId: GAConfig.trackingId,
       },
     },
   ],
