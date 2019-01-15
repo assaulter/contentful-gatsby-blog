@@ -30,6 +30,7 @@ module.exports = {
     'gatsby-transformer-remark',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
@@ -42,6 +43,7 @@ module.exports = {
     },
   ],
   siteMetadata: {
-    title: 'kz_kazuki',
-  }
+    title: 'assaulter.info',
+    siteUrl: 'https://www.assaulter.info'
+  },
 }
