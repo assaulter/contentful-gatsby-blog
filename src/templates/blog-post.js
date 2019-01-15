@@ -4,6 +4,7 @@ import get from 'lodash/get'
 import Img from 'gatsby-image'
 
 import heroStyles from '../components/hero.module.css'
+import blogPostStyles from './blog-post.module.css'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -25,7 +26,7 @@ class BlogPostTemplate extends React.Component {
           >
             {post.publishDate}
           </p>
-          <div
+          <div className={blogPostStyles.innerHtml}
             dangerouslySetInnerHTML={{
               __html: post.body.childMarkdownRemark.html,
             }}
